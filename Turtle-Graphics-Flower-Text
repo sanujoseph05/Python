@@ -1,0 +1,38 @@
+from turtle import *
+import colorsys
+import time
+
+speed(-1)
+pensize(1)
+h=0.9
+bgcolor('black')
+screen = Screen().getcanvas().winfo_toplevel()
+screen.attributes("-fullscreen", True)
+setposition(0,100)
+for i in range(35):
+    color =colorsys.hsv_to_rgb(h,0.7,0.9)
+    pencolor(color)
+    h+=0.05
+    circle(190-i,100)
+    lt(80)
+    circle(190-i,100)
+    rt(90);
+setposition(-300,-300)
+name ="Bubbles Technologies Pvt Ltd"
+for i in range(len(name)): 
+    setposition(-300+(i*25),-300)
+    color =colorsys.hsv_to_rgb(h,0.7,0.9)
+    pencolor(color)
+    write(name[i], font=("Verdana", 30, "bold")) 
+    time.sleep(.08)
+    h+=0.05
+setposition(-260,-330)
+tagline ="Settling Your Cyber Puzzles!"
+for i in range(len(tagline)): 
+    color =colorsys.hsv_to_rgb(h,0.7,0.9)
+    pencolor(color)
+    setposition(-260+(i*20),-330)
+    write(tagline[i], font=("Verdana", 20, "normal")) 
+    time.sleep(.08)
+    h+=0.04
+exitonclick()
